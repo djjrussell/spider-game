@@ -1,0 +1,8 @@
+#sprite{
+    height: 100px;
+    width: 100px;
+    transform: rotate(180deg);
+    top: 300px;
+    left: 600px;
+    position:absolute;
+}
