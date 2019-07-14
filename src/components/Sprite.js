@@ -66,6 +66,8 @@ export class Sprite extends React.Component{
         }
     }
 
+    
+
     render(){
         return (
             <img

@@ -1,7 +1,7 @@
-#sprite{
+#sprite,
+.enemy{
     height: 100px;
     width: 100px;
-    /*transform: rotate(180deg);*/
     position:absolute;
 }
 
