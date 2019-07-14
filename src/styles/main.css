@@ -1,3 +1,7 @@
+#GAME, #board, body{
+    width: 100%;
+    height: 1000px;
+}
 #sprite,
 .enemy{
     height: 100px;

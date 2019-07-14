@@ -25,7 +25,7 @@ export class Game extends React.Component {
 
     render(){
         return (
-            <div>
+            <div id="GAME">
                 < StartButton className='button' onClick={this.handleButtonClick}/>
                 <div>
                     {this.state.gameSpace}

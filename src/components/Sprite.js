@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from "react-dom";
 
 export class Sprite extends React.Component{
 
@@ -17,6 +18,35 @@ export class Sprite extends React.Component{
 
     }
 
+    checkForCollision(){
+        const spider = ReactDOM.findDOMNode(this);
+        const enemies = document.getElementsByClassName("enemy");
+        for(let i = 0; i < enemies.length; i++){
+
+            let e = enemies[i];
+
+            let x1 = spider.offsetLeft;
+            let y1 = spider.offsetTop;
+            let h1 = spider.offsetHeight;
+            let w1 = spider.offsetWidth;
+            let b1 = y1 + h1;
+            let r1 = x1 + w1;
+            let x2 = e.offsetLeft;
+            let y2 = e.offsetTop;
+            let h2 = e.offsetHeight;
+            let w2 = e.offsetWidth;
+            let b2 = y2 + h2;
+            let r2 = x2 + w2;
+
+            if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2){
+                let p = "poop";
+            }else{
+                alert("you ate the moth");
+            }
+
+        }
+    }
+
     handleKeyUp(e) {
         switch (e.code) {
             case "ArrowUp":
@@ -28,7 +58,7 @@ export class Sprite extends React.Component{
                     top: newTopTop,
                     transform: 'rotate(180deg)'
                 });
-
+                this.checkForCollision();
                 break;
             case "ArrowLeft":
 
@@ -39,7 +69,7 @@ export class Sprite extends React.Component{
                     left: newLeftLeft,
                     transform: 'rotate(90deg)'
                 });
-
+                this.checkForCollision();
                 break;
             case "ArrowDown":
 
@@ -50,7 +80,7 @@ export class Sprite extends React.Component{
                     top: newTopDown,
                     transform: 'rotate(0deg)'
                 });
-
+                this.checkForCollision();
                 break;
             case "ArrowRight":
 
@@ -61,12 +91,12 @@ export class Sprite extends React.Component{
                     left: newLeftRight,
                     transform: 'rotate(270deg)'
                 });
-
+                this.checkForCollision();
                 break;
         }
     }
 
-    
+
 
     render(){
         return (
@@ -78,8 +108,8 @@ export class Sprite extends React.Component{
                 }
                 style={
                     {
-                        top:this.state.top,
-                        left:this.state.left,
+                        marginTop:this.state.top,
+                        marginLeft:this.state.left,
                         transform: this.state.transform
                     }
                 }
