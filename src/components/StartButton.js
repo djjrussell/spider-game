@@ -1,9 +1,12 @@
 import React from 'react'
 
-export const StartButton = () =>{
-        return (
-            <button>
-                Start
-            </button>
-        )
+export class StartButton extends React.Component{
+
+        render() {
+            return (
+                <button onClick={this.props.onClick}>
+                    Start
+                </button>
+            )
+        }
 };

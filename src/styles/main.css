@@ -4,3 +4,7 @@
     /*transform: rotate(180deg);*/
     position:absolute;
 }
+
+.button:hover{
+    cursor: pointer;
+}
