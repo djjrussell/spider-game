@@ -12,8 +12,8 @@ export class Sprite extends React.Component{
             left: 600,
             transform: 'rotate(180deg)'
         };
-        this.handleKeyUp = this.handleKeyUp.bind(this);
 
+        this.handleKeyUp = this.handleKeyUp.bind(this);
         document.onkeydown = this.handleKeyUp;
 
     }
@@ -25,8 +25,8 @@ export class Sprite extends React.Component{
 
             let e = enemies[i];
 
-            let x1 = spider.offsetLeft;
-            let y1 = spider.offsetTop;
+            let x1 = spider.offsetLeft + 50;
+            let y1 = spider.offsetTop + 50;
             let h1 = spider.offsetHeight;
             let w1 = spider.offsetWidth;
             let b1 = y1 + h1;
@@ -41,7 +41,8 @@ export class Sprite extends React.Component{
             if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2){
                 let p = "poop";
             }else{
-                alert("you ate the moth");
+                e.remove();
+                document.dispatchEvent(new Event("bugEaten"));
             }
 
         }
