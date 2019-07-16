@@ -13,8 +13,8 @@ export class Enemy extends React.Component {
 
     getRandomPosition() {
 
-        let x = document.body.offsetHeight - 100;
-        let y = document.body.offsetWidth - 100;
+        let x = document.body.offsetHeight;
+        let y = document.body.offsetWidth;
         const randomX = Math.floor(Math.random() * x);
         const randomY = Math.floor(Math.random() * y);
 

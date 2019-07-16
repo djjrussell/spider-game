@@ -16,7 +16,6 @@ export class Board extends React.Component {
     }
 
     renderNewEnemies(){
-        debugger;
         for(let i = 0; i < 2; i++){
             let newEnemy = <Enemy/>;
             const updated = this.state.enemies.push(newEnemy);
@@ -25,12 +24,13 @@ export class Board extends React.Component {
     }
 
     render(){
+
         return (
             <div id='board'>
                 <Sprite />
                 {
                     this.state.enemies.map(item =>(
-                        <div>{item}</div>
+                        item
                     ))
                 }
             </div>
