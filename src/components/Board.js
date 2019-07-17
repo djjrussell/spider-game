@@ -9,9 +9,11 @@ export class Board extends React.Component {
 
         super(props);
         this.renderNewEnemies = this.renderNewEnemies.bind(this);
+
         this.state = {
             enemies:[<Enemy />]
         };
+
         document.addEventListener("bugEaten", this.renderNewEnemies)
     }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StartButton } from './StartButton.js'
 import {Board} from "./Board";
-
+import { ScoreDisplay } from "./ScoreDisplay.js";
 
 export class Game extends React.Component {
 
@@ -9,10 +9,15 @@ export class Game extends React.Component {
         super(props);
 
         this.state = {
-            gameSpace: null
+            gameSpace: null,
+            score: 0
         };
 
         this.handleButtonClick = this.handleButtonClick.bind(this);
+        this.setScore = this.setScore.bind(this);
+
+        document.addEventListener("bugEaten", this.setScore);
+
     }
 
     handleButtonClick(){
@@ -23,11 +28,22 @@ export class Game extends React.Component {
 
     }
 
+    setScore(){
+        debugger;
+        let currentScore = this.state.score;
+        currentScore++;
+        this.setState(
+            {
+                score: currentScore
+            }
+        );
+    }
+
     render(){
         return (
             <div id="GAME">
                 < StartButton className='button' onClick={this.handleButtonClick}/>
-
+                < ScoreDisplay score={this.state.score} />
                 <div>
                     {this.state.gameSpace}
                 </div>

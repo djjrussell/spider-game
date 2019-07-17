@@ -34,8 +34,8 @@ export class Enemy extends React.Component {
                 }
                 style={
                     {
-                        marginTop: this.state.top,
-                        marginLeft: this.state.left
+                        top: this.state.top,
+                        left: this.state.left
                     }
                 }
             />

@@ -10,7 +10,6 @@ export class Sprite extends React.Component{
         this.state = {
             top: 300,
             left: 600,
-            score: 0,
             transform: 'rotate(180deg)'
         };
 
@@ -21,6 +20,7 @@ export class Sprite extends React.Component{
 
     checkForCollision(){
         const spider = ReactDOM.findDOMNode(this);
+
         const enemies = document.getElementsByClassName("enemy");
         for(let i = 0; i < enemies.length; i++){
 
@@ -40,11 +40,10 @@ export class Sprite extends React.Component{
             let r2 = x2 + w2;
 
             if (!(b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2)){
+
                 e.remove();
-                let currentScore = this.state.score;
-                const newScore = currentScore += 1
-                this.setState({score:newScore});
                 document.dispatchEvent(new Event("bugEaten"));
+
             }
 
         }
@@ -99,15 +98,12 @@ export class Sprite extends React.Component{
         }
     }
 
-    componentDidMount(){
-
-    }
-
     render(){
         return (
             <img
                 id='sprite'
                 alt="spider"
+
                 src={
                     require("./../images/spider_gif.gif")
                 }
@@ -118,6 +114,7 @@ export class Sprite extends React.Component{
                         transform: this.state.transform
                     }
                 }
+
             />
         )
     }

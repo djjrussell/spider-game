@@ -1,7 +1,12 @@
-#GAME, #board, body{
+body #GAME,
+body #board,
+body{
     width: 100%;
     max-height: 600px !important;
+    height: 600px !important;
+    position: relative;
 }
+
 #sprite,
 .enemy{
     height: 100px;
@@ -11,4 +16,13 @@
 
 .button:hover{
     cursor: pointer;
+}
+
+#scoreTile {
+    font-size: 4em;
+    font-weight: bolder;
+    color: lightseagreen;
+    position: absolute;
+    top: -10px;
+    right:10px;
 }

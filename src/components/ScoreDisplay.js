@@ -1,13 +1,17 @@
-
 import React from 'react'
 
 export class ScoreDisplay extends React.Component {
 
-    render(){
-        return(
-            <div>
-                {this.props.score}
-            </div>
-        );
+    constructor(props){
+        super(props);
     }
-}
+
+    render() {
+        return (
+            <div id="scoreTile">
+                {this.props.score}
+                </div>
+        )
+    }
+
+};
