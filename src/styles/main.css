@@ -18,11 +18,31 @@ body{
     cursor: pointer;
 }
 
+.button{
+    font-size: 1.5em;
+    border: 1px solid lightseagreen;
+    border-radius: 5px;
+    color: lightseagreen;
+    padding: 10px;
+    margin: 1em;
+    text-align: center;
+}
+
 #scoreTile {
     font-size: 4em;
     font-weight: bolder;
     color: lightseagreen;
+}
+
+#scoreTileTitle{
+    font-size: 2em;
+    display:block;
+    color: lightseagreen;
+}
+
+#scoreContainer{
     position: absolute;
-    top: -10px;
-    right:10px;
+    top:-5px;
+    right: 20px;
+    text-align: center;
 }
