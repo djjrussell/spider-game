@@ -53,6 +53,8 @@ body{
     right: 300px;
     text-align: center;
 }
-/*#counter{*/
-    /**/
-/*}*/
+
+#header{
+    padding-bottom: 1em;
+    border-bottom: 2px solid lightseagreen;
+}

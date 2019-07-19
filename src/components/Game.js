@@ -53,13 +53,13 @@ export class Game extends React.Component {
     render() {
         return (
             <div id="GAME">
-                {/*<div id="header">*/}
-                < StartButton className='button' onClick={this.handleButtonClick}/>
-                <div>
-                    {this.state.counter}
+                <div id="header">
+                    < StartButton className='button' onClick={this.handleButtonClick}/>
+                    <div>
+                        {this.state.counter}
+                    </div>
+                    < ScoreDisplay score={this.state.score}/>
                 </div>
-                < ScoreDisplay score={this.state.score}/>
-                {/*</div>*/}
                 <div>
                     {this.state.gameSpace}
                 </div>
