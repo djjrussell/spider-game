@@ -105,7 +105,7 @@ export class Sprite extends React.Component{
                 alt="spider"
 
                 src={
-                    require("./../images/spiderTwo.gif")
+                    require("./../images/spider_gif.gif")
                 }
                 style={
                     {
