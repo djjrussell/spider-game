@@ -28,7 +28,7 @@ body{
     text-align: center;
 }
 
-#scoreTile {
+#scoreTile, #counter {
     font-size: 4em;
     font-weight: bolder;
     color: lightseagreen;
@@ -46,3 +46,13 @@ body{
     right: 20px;
     text-align: center;
 }
+
+#counter{
+    position: absolute;
+    top:32px;
+    right: 300px;
+    text-align: center;
+}
+/*#counter{*/
+    /**/
+/*}*/
