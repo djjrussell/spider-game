@@ -1,20 +1,14 @@
 import React from 'react'
 
-export class ScoreDisplay extends React.Component {
+export const ScoreDisplay = function (props) {
 
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <div id="scoreContainer">
-                <div id="scoreTileTitle">SCORE:</div>
-                <div id="scoreTile">
-                    {this.props.score}
-                </div>
+    return (
+        <div className="headerContainer">
+            <div id="timerTitle">SCORE:</div>
+            <div id="scoreTile">
+                {props.score}
             </div>
-        )
-    }
+        </div>
+    )
 
 };

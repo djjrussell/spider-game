@@ -27,7 +27,7 @@ export class Counter extends React.Component {
 
     }
 
-    isOver(){
+    isOver() {
 
         return this.state.time <= 0;
 
@@ -37,7 +37,7 @@ export class Counter extends React.Component {
         let newTime = 16 - Math.floor(this.delta() / 1000);
         this.setState({time: newTime});
 
-        if(this.isOver()){
+        if (this.isOver()) {
 
             document.dispatchEvent(new Event("gameOver"));
 
@@ -53,8 +53,11 @@ export class Counter extends React.Component {
 
     render() {
         return (
-            <div id="counter">
-                {this.state.time}
+            <div className="headerContainer">
+                <div id="counterTitle">Time Left:</div>
+                <div id="counter">
+                    {this.state.time}
+                </div>
             </div>
         )
     }

@@ -60,6 +60,7 @@ export class Sprite extends React.Component{
                     top: newTopTop,
                     transform: 'rotate(180deg)'
                 });
+
                 this.checkForCollision();
                 break;
             case "ArrowLeft":
@@ -71,6 +72,7 @@ export class Sprite extends React.Component{
                     left: newLeftLeft,
                     transform: 'rotate(90deg)'
                 });
+
                 this.checkForCollision();
                 break;
             case "ArrowDown":
@@ -82,6 +84,7 @@ export class Sprite extends React.Component{
                     top: newTopDown,
                     transform: 'rotate(0deg)'
                 });
+
                 this.checkForCollision();
                 break;
             case "ArrowRight":
@@ -93,6 +96,7 @@ export class Sprite extends React.Component{
                     left: newLeftRight,
                     transform: 'rotate(270deg)'
                 });
+
                 this.checkForCollision();
                 break;
         }

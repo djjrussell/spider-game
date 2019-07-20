@@ -15,8 +15,9 @@ export class Enemy extends React.Component {
 
         let y = document.body.offsetHeight + 150;
         let x = document.body.offsetWidth;
-        const randomX = Math.floor(Math.random() * x -50);
-        const randomY = Math.floor(Math.random() * y -50);
+
+        const randomX = Math.abs(Math.floor(Math.random() * x -50));
+        const randomY = Math.abs(Math.floor(Math.random() * y -50));
 
         this.state = {
             top: randomY,
@@ -29,6 +30,7 @@ export class Enemy extends React.Component {
             <img
                 alt="moth"
                 className='enemy'
+
                 src={
                     require("./../images/moth.gif")
                 }

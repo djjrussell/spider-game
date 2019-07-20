@@ -3,6 +3,7 @@ import {StartButton} from './StartButton.js'
 import {Board} from "./Board";
 import {ScoreDisplay} from "./ScoreDisplay.js";
 import {Counter} from "./Counter.js";
+import {isValid} from './../commonScripts/common.js';
 
 export class Game extends React.Component {
 
@@ -45,9 +46,17 @@ export class Game extends React.Component {
     }
 
     gameOver() {
-        document.getElementById("counter").remove();
-        alert("YOU SCORED " + this.state.score);
-        document.location = document.location;
+
+        if (isValid(this.state.score)) {
+
+            alert("YOU SCORED " + this.state.score);
+
+            this.setState({
+                counter: null,
+                gameSpace: null,
+                score: null
+            })
+        }
     }
 
     render() {
@@ -55,14 +64,10 @@ export class Game extends React.Component {
             <div id="GAME">
                 <div id="header">
                     < StartButton className='button' onClick={this.handleButtonClick}/>
-                    <div>
-                        {this.state.counter}
-                    </div>
+                    {this.state.counter}
                     < ScoreDisplay score={this.state.score}/>
                 </div>
-                <div>
-                    {this.state.gameSpace}
-                </div>
+                {this.state.gameSpace}
             </div>
         )
     }

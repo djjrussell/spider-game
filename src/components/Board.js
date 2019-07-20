@@ -5,35 +5,50 @@ import {Enemy} from "./Enemy.js";
 
 export class Board extends React.Component {
 
-    constructor(props){
+    constructor(props) {
 
         super(props);
+
         this.renderNewEnemies = this.renderNewEnemies.bind(this);
 
         this.state = {
-            enemies:[<Enemy />]
+
+            enemies: [<Enemy/>]
+
         };
 
-        document.addEventListener("bugEaten", this.renderNewEnemies)
+        document.addEventListener("bugEaten", this.renderNewEnemies);
+
     }
 
-    renderNewEnemies(){
-        for(let i = 0; i < 2; i++){
+    renderNewEnemies() {
+        for (let i = 0; i < 2; i++) {
+
             let newEnemy = <Enemy/>;
+
             const updated = this.state.enemies.push(newEnemy);
-            this.setState({e: updated})
+
+            this.setState(
+                {
+                    e: updated
+                }
+            )
         }
     }
 
-    render(){
+    render() {
 
         return (
             <div id='board'>
-                <Sprite />
+                <Sprite/>
                 {
-                    this.state.enemies.map(item =>(
-                        item
-                    ))
+                    this.state.enemies.map(item =>
+                        (
+
+                            item
+
+                        )
+                    )
                 }
             </div>
         )
