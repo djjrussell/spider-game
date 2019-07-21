@@ -18,6 +18,7 @@ export class Counter extends React.Component {
         this.delta = this.delta.bind(this);
 
         this.start();
+
     }
 
     delta() {
@@ -29,7 +30,7 @@ export class Counter extends React.Component {
 
     isOver() {
 
-        return this.state.time <= 0;
+        return this.state.time < 0;
 
     }
 

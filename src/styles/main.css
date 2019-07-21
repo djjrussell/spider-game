@@ -2,9 +2,10 @@ body #GAME,
 body #board,
 body{
     width: 100%;
-    max-height: 600px !important;
-    height: 600px !important;
+    max-height: 700px !important;
+    height: 700px !important;
     position: relative;
+    overflow:hidden !important;
 }
 
 #sprite,
